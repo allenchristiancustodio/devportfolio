@@ -1,7 +1,14 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Download } from "lucide-react";
 import { motion } from "motion/react";
 
 const ContactPage = () => {
+  const handleDownloadCV = () => {
+    window.open(
+      "https://drive.google.com/file/d/1k6n5tV0POkECODa9XUWL-8U2XbyFmoPB/view?usp=sharing",
+      "_blank"
+    );
+  };
+
   return (
     <>
       <div className="lg:flex items-center lg:h-[80vh]">
@@ -14,9 +21,20 @@ const ContactPage = () => {
             <div className="font-bold text-customDark text-[80px] md:text-[100px] text-center">
               AC
             </div>
-            <p className="text-customSecondary text-center">
-              ................
-            </p>
+            <div className="flex justify-center mt-8">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <button
+                  onClick={handleDownloadCV}
+                  className="flex items-center px-6 py-3 bg-customDark text-white rounded-lg hover:bg-opacity-90 transition-colors"
+                >
+                  <Download className="mr-2" />
+                  <span>Download CV</span>
+                </button>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
         <div className="flex-1 p-8 lg:p-18">
@@ -33,7 +51,8 @@ const ContactPage = () => {
             </p>
             <div className="flex justify-center lg:block">
               <p className="text-customSecondary text-center flex my-4">
-                <Mail className="mr-2" /> <span>custodioallenchristian@gmail.com</span>
+                <Mail className="mr-2" />{" "}
+                <span>custodioallenchristian@gmail.com</span>
               </p>
             </div>
             <div className="flex justify-center lg:block">
